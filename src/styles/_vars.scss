@@ -1,0 +1,41 @@
+$white:rgb(255, 255, 255);
+$black:rgb(0, 0, 0);
+
+//background
+$primary: #d997f6;
+$secondary:#3ca6fe;
+$purple: #5a33ac;
+
+//text
+$text: #e9e1ff;
+$text-secondary: #b8b1ff;
+
+//text size
+$text-size: 16px;
+$small-text-size: 12px;
+
+$main-font: 'Roboto', sans-serif;
+$secondary-font: 'Gulzar', serif;
+
+//padding
+$rl-padding: 70px;
+$ud-padding: 20px;
+
+//media
+$middle-desk: 1440px;
+$mini-desk: 1200px;
+    $desktop: 1025px;
+$tablet: 1024px;
+$mini-tablet: 768px;
+$mobile: 576px;
+$mini-mobile: 376px;
+
+
+
+
+$main-shadow:
+    0 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0 4px 4px -4px rgba(30, 33, 44, 0.03);
+

@@ -1,0 +1,29 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    z-index: 3;
+    width: 100%;
+    padding: $ud-padding $rl-padding;
+    background: transparent;
+    @include animation-fade-in (1s, 3.8s);
+
+    &-copyright {
+        text-align: left;
+        font-size: $small-text-size;
+        color: $text-secondary;
+        opacity: 0.5;
+    }
+
+    &-designed {
+        margin-top: 0.8rem;
+        a {
+            color: $text;
+            transition: color .2s ease;
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+}
+

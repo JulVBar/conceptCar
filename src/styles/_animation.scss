@@ -1,0 +1,48 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin animation-fade-in ($duration, $delay) {
+    opacity: 0;
+    animation: fadeIn $duration linear forwards;
+    animation-delay: $delay;
+}
+
+
+@keyframes slide-out-right {
+    from {
+        transform: translateX(-120%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@mixin animation-slide-out-right ($duration, $delay) {
+    transform: translateX(-120%);
+    animation: slide-out-right $duration linear forwards;
+    animation-delay: $delay;
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@mixin animation-slide-down ($duration, $delay) {
+    transform: translateY(-120%);
+    opacity: 0;
+    animation: slide-down $duration linear forwards;
+    animation-delay: $delay;
+}

@@ -1,0 +1,47 @@
+Создаем репозиторий на сайте (без описания? и ридмифайла?(есть он создается видимо нужно пулить))
+
+git init
+git add -A
+remote add origin https://github.com/JulVBar/Название репозитория
+branch -M main
+git commit -m "first commit"
+git push -u origin main
+
+Добавляем readme
+git pull
+
+
+Settings - Pages
+
+Branch: main
+Root: docs
+
+Добавляем в readme
+git pull
+
+
+nmp init
+entry: index.js
+
+npm install
+
+В package.json:
+
+"scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+  },
+"browserslist": "> 0.25%, not dead",
+
+
+
+BABEL
+
+https://babeljs.io/setup --> Webpack
+https://babeljs.io/docs/en/usage/  Usage guide
+
+
+npm i --save-dev clean-webpack-plugin copy-webpack-plugin cross-env css-mqpacker-webpack-plugin file-loader html-webpack-plugin image-webpack-loader css-loader mini-css-extract-plugin node-sass optimize-css-assets-webpack-plugin sass-loader terser-webpack-plugin webpack webpack-cli webpack-dev-server @babel/core @babel/preset-env babel-loader
+npm install --save @babel/polyfill

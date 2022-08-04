@@ -1,0 +1,36 @@
+@import "~normalize.css";
+@import "vars";
+@import "mixin";
+@import "settings";
+@import "animation";
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&display=swap');
+
+// Ctrl + Alt + X классы SCSS
+// Ctrl + Alt + C классы CSS
+
+//прописываем background-image: url("./images/picture.jpg");
+
+
+/* Blocks */
+
+@import "components/header";
+@import "components/footer";
+@import "components/sidebar";
+@import "components/verticalSlider";
+@import "components/burger";
+@import "components/burger-menu";
+
+@import "components/long-arrow";
+@import "components/preloader";
+
+
+
+
+
+
+
+
+
+
+
+

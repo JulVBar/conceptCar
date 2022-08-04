@@ -1,0 +1,113 @@
+.scroll {
+    &-container {
+        cursor: pointer;
+        position: absolute;
+        z-index: 3;
+        top: -17rem;
+        left: 8rem;
+        height: 11rem;
+        width: 10rem;
+        @include animation-fade-in (1s, 3s);
+
+        &.last-slide {
+            opacity: 0;
+            visibility: hidden;
+            @include roll-in-blurred-left;
+        }
+
+        &:hover {
+            .scroll-arrow {
+                animation: border-run 2.5s linear infinite;
+                animation-delay: .50s;
+            }
+        } 
+    }
+
+    &-arrow {
+        position: absolute;
+        display: block;
+        bottom: 0%;
+        left: 50%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(217,151,246,1) 0%, rgba(255,255,255,0) 100%);
+        transition: all .5s ease;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            bottom: 3px;
+            right: -1.5px;
+            background-color: $primary;
+            transform: rotate(45deg);
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 2px;
+            bottom: 3px;
+            left: -1.5px;
+            background-color: $primary;
+            transform: rotate(-45deg);
+        }
+    }
+
+    &-text {
+        position: absolute;
+        top: 4rem;
+        left: 25%;
+        text-transform: uppercase;
+        font-weight: 600;
+        min-width: 10rem;
+    }
+}
+
+@keyframes border-run {
+    0% {
+        top: -50%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes roll-in-blurred-left {
+    0% {
+        -webkit-transform: translateX(-1000px) rotate(-720deg);
+        transform: translateX(-1000px) rotate(-720deg);
+        -webkit-filter: blur(50px);
+        filter: blur(50px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+@keyframes roll-in-blurred-left {
+    0% {
+        -webkit-transform: translateX(-1000px) rotate(-720deg);
+        transform: translateX(-1000px) rotate(-720deg);
+        -webkit-filter: blur(50px);
+        filter: blur(50px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateX(0) rotate(0deg);
+        transform: translateX(0) rotate(0deg);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
