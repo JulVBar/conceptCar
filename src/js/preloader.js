@@ -5,7 +5,7 @@ function preloader() {
             let preloader = document.querySelector('.preloader');
             let sliderPicture = document.querySelector('.slider-wrapper');
     
-            if (preloader && sliderPicture && !preloader.classList.contains('done')) {
+            if (!preloader.classList.contains('done')) {
                 preloader.classList.add('done');
                 sliderPicture.classList.add('ready');
             }
@@ -14,6 +14,7 @@ function preloader() {
 
         }, 1000);
     };
+    
 }
 
 export default preloader;
