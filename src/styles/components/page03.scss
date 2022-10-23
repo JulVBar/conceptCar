@@ -1,51 +1,46 @@
 .page03 {
     &-container {
         position: relative;
-        // width: 100%;
         height: 100%;
     }
     &-block {
-        width: 35%;
-        height: 45%;
+        width: 45rem;
+        height: 30rem;
         position: absolute;
+        transform: scale(0.9);
+        opacity: 0.5;
+        transition: all 1s ease;
         &--one {
             background-image: url('images/page03-block-2.png');
             background-size: cover;
             background-position: center;
-            top: -7%;
-            left: 15%;
+            top: -3rem;
+            left: 20rem;
         }
         &--two {
             background-image: url('images/page03-block-1.png');
             background-size: cover;
             background-position: center;
-            top: 10%;
-            right: 15%;
-            transform: scale(0.8);
-            opacity: 0.5;
+            top: 5rem;
+            right: 20rem;
             
+        }
+        &.active {
+            transform: scale(1);
+            opacity: 1;
         }
     }
 
     &-text {
         text-align: left;
         position: absolute;
-        bottom: -22%;
-        left: 20%;
+        bottom: -1rem;
+        left: 8rem;
         
-        &-line {
-            width: 140px;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(217,151,246,1) 0%, $secondary 100%);
-            opacity: 0.7;
-            position: absolute;
-            top: 35%;
-            left: -65%;
-        }
         &-num {
             font-weight: 700;
             font-family: $secondary-font;
-            font-size: calc($index * 2);
+            font-size: 1.5rem;
             margin-bottom: 20px;
         }
         &-titleUp {
@@ -53,18 +48,188 @@
             font-family: $secondary-font;
             text-transform: uppercase;
             font-style: italic;
-            font-size: calc($index * 5);
+            font-size: 3rem;
         }
         &-titleDown {
             font-weight: 700;
             font-family: $secondary-font;
             text-transform: uppercase;
-            font-size: calc($index * 5);
+            font-size: 2.8rem;
         }
         &-sub-title {
             font-family: $secondary-font;
         }
     }
 
+    &-round-btn {
+        position: absolute;
+        top: 18rem;
+        left: -10rem;
+        width: 13rem;
+        height: 13rem;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s ease;
+        &:hover {
+            .page03-circle-path {
+                animation-play-state: running;
+            }
+            .page03-arrow {
+                left: 115%;
+            }
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    &-line {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -25%;
+        width: 7.3rem;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(217,151,246,1) 0%, $secondary 100%);
+        opacity: 0.7;
+    }
+    &-circle,
+    &-circle-path {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 13rem;
+        height: 13rem;
+        margin: -6.5rem;
+        border-radius: 50%;
+        z-index: 9;
+    }
+    &-circle-path {
+        animation: rotate 5000ms infinite linear;
+        animation-play-state: paused;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 1.7rem;
+            left: 1.7rem;
+            z-index: 10;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #a4d7da, $secondary);
+            box-shadow: 0 0 5px $secondary, 0 0 10px $secondary, 0 0 15px $secondary, 0 0 20px $secondary;
+        }
+    }
+    &-small-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px 20px rgba(217, 151, 246, 0.1), inset 0px 0px 20px 35px rgba(217, 151, 246, 0.1);
+    }
+    &-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1rem;
+        width: 2.5rem;
+        transition: all 1s ease;
+    }
+    &-page-roll {
+        &-btn {
+            position: absolute;
+            right: 5rem;
+            top: 44%;
+            border: 1px solid #b7b1ffa8;
+            width: 124px;
+            height: 64px;
+            cursor: pointer;
+            &:hover {
+                .page03-page-roll-anchor {
+                    animation-play-state: running;
+                }
+            }
+            &-inner {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                pointer-events: none;
+                span {
+                    display: block;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    color: #5d5660;
+                    letter-spacing: 3px;
+                    &.active {
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        color: $text;
+                    }
+                }
+            }
+        }
     
+        &-anchor {
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #dcb7dd, $primary);
+        box-shadow: 0 0 5px $primary,
+                    0 0 10px $primary,
+                    0 0 15px $primary,
+                    0 0 20px $primary;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        offset-anchor: center center;
+        offset-path: path("M20 0 h 105 v 65 h -125 v -65 h 20");
+        offset-rotate: auto 90deg;
+        offset-anchor: 50% 50%;
+        animation: move-along 5000ms 0ms infinite linear;
+        animation-play-state: paused;
+        }
+        
+        &-sign {
+            position: absolute;
+            bottom: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: $primary;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    }
+    
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move-along {
+    100% {
+        offset-distance: 100%;
+    }
 }

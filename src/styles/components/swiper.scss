@@ -72,7 +72,7 @@
         border-bottom: 5px solid $primary;
         width: 3rem;
         border-radius: 0;
-        margin: 1rem 0 !important;
+        padding: 0.5rem 0;
         position: relative;
         transition: all 0.3s ease;
 
@@ -100,6 +100,7 @@
             transform: translateY(-50%);
             color: $text;
             opacity: 0;
+            visibility: hidden;
             font-family: $secondary-font;
         }
         
@@ -107,6 +108,7 @@
             padding-top: 2rem;
             &:after {
                 opacity: 0.8;
+                visibility: visible;
             }
         }
     }

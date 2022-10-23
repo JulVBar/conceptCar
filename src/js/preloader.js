@@ -1,12 +1,11 @@
 function preloader() {
 
     document.body.onload = function() {
-
         setTimeout(function() {
             let preloader = document.querySelector('.preloader');
             let sliderPicture = document.querySelector('.slider-wrapper');
     
-            if (!preloader.classList.contains('done')) {
+            if (preloader && sliderPicture && !preloader.classList.contains('done')) {
                 preloader.classList.add('done');
                 sliderPicture.classList.add('ready');
             }

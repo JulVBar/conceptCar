@@ -4,11 +4,13 @@ import verticalSlider from './js/verticalSlider';
 
 import burgerMenu from './js/burgerMenu';
 import preloader from './js/preloader';
+import page03Roll from './js/page03Roll';
 
 window.addEventListener('DOMContentLoaded', function() {
     verticalSlider();
     burgerMenu();
     preloader();
+    page03Roll();
 });
 
 // load all images
