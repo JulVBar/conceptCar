@@ -5,7 +5,7 @@
     z-index: 3;
     height: 70%;
     padding: 0 4.5rem;
-    @include animation-fade-in (1s, 3s);
+    @include animation-fade-in (1s, $general-delay);
 
     &-border {
         position: absolute;

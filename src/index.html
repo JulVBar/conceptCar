@@ -13,17 +13,20 @@
 
     <!-- Useful meta tags -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
     <meta name="robots" content="index, follow">
     <meta name="google" value="notranslate"> <!---чтоб не бесил выплывающий перевод страницы-->
     <meta name="description" content=""> <!-- Need to fill -->
     <meta name="keywords" content=""> <!-- Need to fill -->
-    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
     <title>Title</title>
 </head>
 
 <body>
-<div class="preloader">
+<!-- <div class="preloader">
     <div id="loader">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -41,8 +44,7 @@
         </div>
     </div>
     
-</div>
-
+</div> -->
 
 <header class="header">
     <nav class="header-nav">
@@ -52,7 +54,7 @@
             <li class="nav-item">Desing</li>
         </ul>
     </nav>
-    <div class="header-logo">
+    <div class="header-logo animate__fadeIn">
         <svg><use xlink:href="images/icon/sprite.svg#mercedes"></use></svg>
     </div>
     <div class="header-burger">
@@ -85,54 +87,80 @@
     </div>
 </aside>
 
-<main id='main-container'>
-    <div class="left-nav-panel">
-        <div class="navigation-container">
-            <span class="navigator-wrapper">
-                <span class="navigator dot selected" data-key="1"></span>
-            </span>
-            <span class="navigator-wrapper">
-                <span class="navigator dot" data-key="2"></span>
-            </span>
-            <span class="navigator-wrapper">
-                <span class="navigator dot" data-key="3"></span>
-            </span>
-            <span class="navigator-wrapper">
-                <span class="navigator dot" data-key="4"></span>
-            </span>
-            <span class="navigator-wrapper">
-                <span class="navigator dot" data-key="5"></span>
-            </span>
+<main>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="slide1">
+                <section id="first-slide" class="swiper-content">
+                    <h2 class="page01-sub-title">Inspired by the future:</h2>
+                    <h1 class="page01-title">
+                        <span>V</span>
+                        <span>I</span>
+                        <span>S</span>
+                        <span>I</span>
+                        <span>O</span>
+                        <span>N</span>
+                        <span>A</span>
+                        <span>V</span>
+                        <span>T</span>
+                        <span>R</span>
+                    </h1>
+                    <a class="page01-link" href="#">EXPLORE</a>
+                    <div class="page01-hr">
+                        <img src="./images/neon-pink-line.svg" alt="">
+                    </div>
+                </section>
+                <div class="scroll-container is-visible">
+                    <span class="scroll-arrow"></span>
+                    <div class="scroll-text">Look ahead</div>
+                </div>
+            </div>
+            <div class="swiper-slide" id="slide2">
+                <section class="swiper-content">
+                    <h2 class="page01-sub-title">Inspired by the future:</h2>
+                    <h1 class="page01-title">VISION <span>AVTR</span></h1>
+                    <a class="page01-link" href="#">EXPLORE</a>
+                    <div class="page01-hr">
+                        <img src="./images/neon-pink-line.svg" alt="">
+                    </div>
+                </section>
+                <div class="scroll-container is-visible">
+                    <span class="scroll-arrow"></span>
+                    <div class="scroll-text">Look ahead</div>
+                </div>
+            </div>
+            <div class="swiper-slide" id="slide3">
+                <section class="swiper-content">
+                    <div class="page03-container">
+                        <div class="page03-block page03-block--one">
+                            <div class="page03-text">
+                                <div class="page03-text-line"></div>
+                                <div class="page03-text-num">01</div>
+                                <div class="page03-text-titleUp">AVTR</div>
+                                <div class="page03-text-titleDown">INTERIOR</div>
+                                <div class="page03-text-sub-title">inspired by AVATAR</div>
+                            </div>
+                        </div>
+                        <div class="page03-block page03-block--two">
+                            <div class="page03-text">
+                                <div class="page03-text-line"></div>
+                                <div class="page03-text-num">02</div>
+                                <div class="page03-text-titleUp">AVTR</div>
+                                <div class="page03-text-titleDown">EXTERIOR</div>
+                                <div class="page03-text-sub-title">inspired by AVATAR</div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+            <div class="swiper-slide" id="slide4">
+            </div>
+            <div class="swiper-slide" id="slide5">
+            </div>
         </div>
-    </div>
-    <div class="slider-wrapper">
-        <div id="slide1" class="slider-content current" data-key="1">
-            <section class="content-wrapper start-animation">
-                <h1 class="heading">First slide</h1>
-            </section>
-        </div>
-        <div id="slide2" class="slider-content next" data-key="2">
-            <section class="content-wrapper">
-                <h1 class="heading">Second slide</h1>
-            </section>
-        </div>
-        <div id="slide3" class="slider-content next" data-key="3">
-            <section class="content-wrapper">
-                <h1 class="heading">Third slide</h1>
-            </section>
-        </div>
-        <div id="slide4" class="slider-content next" data-key="4">
-            <section class="content-wrapper">
-                <h1 class="heading">Fourth slide</h1>
-            </section>
-        </div>
-        <div id="slide5" class="slider-content next" data-key="5">
-            <section class="content-wrapper">
-                <h1 class="heading">Fifth slide</h1>
-            </section>
-        </div>
+        <div class="swiper-pagination"></div>
     </div>
 </main>
+
 
 <footer id="footerWrapper" class="footer">
     <div class="footer-copyright">
@@ -141,11 +169,6 @@
             <a href="https://dribbble.com/derek_one" target="blank">Kirill Koshelev</a>
         </div>
     </div>
-    <div id="arrowIcon" class="scroll-container">
-        <span class="scroll-arrow"></span>
-        <div class="scroll-text">Look ahead</div>
-    </div>
 </footer>
-
 </body>
 </html>

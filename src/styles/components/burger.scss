@@ -6,7 +6,7 @@
     width: 2rem;
     display: block;
     cursor: pointer;
-    @include animation-fade-in (1s, 3s);
+    @include animation-fade-in (1s, $general-delay);
 }
 
 .burger-bar span {

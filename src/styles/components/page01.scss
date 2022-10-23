@@ -1,0 +1,76 @@
+.page01 {
+    margin-top: -10%;
+    &-title {
+        font-size: 120px;
+        font-family: $secondary-font;
+        letter-spacing: 12px;
+        margin-bottom: 20px;
+        text-shadow: 0 0 6px $text;
+        display: flex;
+        justify-content: center;
+
+        span {
+            display: block;
+            &:nth-child(1) {
+                @include animation-scale-out(1s);
+            }
+            &:nth-child(2) {
+                @include animation-scale-out(1.15s);
+            }
+            &:nth-child(3) {
+                @include animation-scale-out(1.3s);
+            }
+            &:nth-child(4) {
+                @include animation-scale-out(1.45s);
+            }
+            &:nth-child(5) {
+                @include animation-scale-out(1.6s);
+            }
+            &:nth-child(6) {
+                @include animation-scale-out(1.75s);
+                margin-right: 4rem;
+            }
+            &:nth-child(7) {
+                @include animation-scale-out(2s);
+                font-style: italic;
+            }
+            &:nth-child(8) {
+                @include animation-scale-out(2.15s);
+                font-style: italic;
+            }
+            &:nth-child(9) {
+                @include animation-scale-out(2.30s);
+                font-style: italic;
+            }
+            &:nth-child(10) {
+                @include animation-scale-out(2.45s);
+                font-style: italic;
+            }
+        }
+    }
+    &-sub-title {
+        font-weight: 400 !important;
+        margin-bottom: 15px;
+        font-family: $secondary-font;
+        margin-bottom: 20px;
+        opacity: 0;
+        filter: blur(4px);
+        @include animation-blur-out (1s, $general-delay);
+    }
+    &-link {
+        font-weight: 600;
+        color: $text;
+        display: block;
+        margin-bottom: 20px;
+        transition: all 0.2s linear;
+        @include animation-blur-out (1s, $general-delay);
+        
+        &:hover {
+            color: $primary;
+            text-shadow: 0 0 1px $primary;
+        }
+    }
+    &-hr {
+        @include animation-scale-x (0.5s, calc($general-delay + 0.7s));
+    }
+}

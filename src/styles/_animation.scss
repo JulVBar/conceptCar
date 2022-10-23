@@ -1,3 +1,7 @@
+// $preloader-delay: 1000ms;
+$preloader-delay: 0ms;
+$general-delay: 2.5s;
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -10,23 +14,26 @@
 @mixin animation-fade-in ($duration, $delay) {
     opacity: 0;
     animation: fadeIn $duration linear forwards;
-    animation-delay: $delay;
+    animation-delay: calc($preloader-delay + $delay);
 }
 
 
-@keyframes slide-out-right {
+@keyframes slide-in-from-left {
     from {
         transform: translateX(-120%);
+        opacity: 0;
     }
     to {
         transform: translateX(0);
+        opacity: 1;
     }
 }
 
-@mixin animation-slide-out-right ($duration, $delay) {
+@mixin animation-slide-in-from-left ($duration, $delay) {
     transform: translateX(-120%);
-    animation: slide-out-right $duration linear forwards;
-    animation-delay: $delay;
+    opacity: 0;
+    animation: slide-in-from-left $duration linear forwards;
+    animation-delay: calc($preloader-delay + $delay);
 }
 
 @keyframes slide-down {
@@ -44,5 +51,114 @@
     transform: translateY(-120%);
     opacity: 0;
     animation: slide-down $duration linear forwards;
-    animation-delay: $delay;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes roll-in-left {
+    from {
+        transform: rotate(0deg);
+        left: -600px;
+        opacity: 0;
+    }
+    to {
+        transform: rotate(360deg);
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@mixin animation-roll-in-left ($duration, $delay) {
+    left: -600px;
+    opacity: 0;
+    animation: roll-in-left $duration linear forwards;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes scale-out {
+    from {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@mixin animation-scale-out ($delay) {
+    opacity: 0;
+    animation: scale-out 0.5s ease-out forwards;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes scale-x {
+    from {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+@mixin animation-scale-x ($duration, $delay) {
+    opacity: 0;
+    transform: scaleX(0);
+    animation: scale-x $duration linear forwards;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes blur-out {
+    from {
+        filter: blur(4px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+@mixin animation-blur-out ($duration, $delay) {
+    filter: blur(4px);
+    opacity: 0;
+    animation: blur-out $duration linear forwards;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes border-run {
+    0% {
+        top: -50%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        opacity: 0;
+    }
+}
+
+@mixin animation-border-run ($duration, $delay) {
+    top: -50%;
+    opacity: 0;
+    animation: border-run $duration linear infinite;
+    animation-delay: calc($preloader-delay + $delay);
+}
+
+@keyframes slide-in-from-left-v2 {
+    from {
+        left: -100px;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@mixin animation-slide-in-from-left-v2 ($duration, $delay) {
+    left: -100px;
+    animation: slide-in-from-left-v2 $duration linear forwards;
+    animation-delay: calc($preloader-delay + $delay);
 }

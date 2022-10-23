@@ -8,13 +8,12 @@ import preloader from './js/preloader';
 window.addEventListener('DOMContentLoaded', function() {
     verticalSlider();
     burgerMenu();
-    preloader();
+    // preloader();
 });
 
 // load all images
 //каждую подпапку импортируем отдельно (иконки просто копируются в конфиге)
 const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg|gif)$/));
-const slider = importAll(require.context('./images/slider', false, /\.(png|jpe?g|svg|gif)$/));
 
 function importAll(r) {
     let images = {};

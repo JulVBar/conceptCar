@@ -17,6 +17,8 @@
     }
 
     &-logo {
+        @include animation-roll-in-left(1s, 0s);
+        position: relative;
         svg {
             fill: $white;
             width: 70px;
@@ -51,12 +53,12 @@
     }
 
     &:nth-of-type(1) {
-        @include animation-fade-in(2s, 1s);
+        @include animation-slide-in-from-left(0.5s, 2s);
     }
     &:nth-of-type(2) {
-        @include animation-fade-in(2s, 1.5s);
+        @include animation-slide-in-from-left(0.5s, 1.5s);
     }
     &:nth-of-type(3) {
-        @include animation-fade-in(2s, 2s);
+        @include animation-slide-in-from-left(0.5s, 1s);
     }
 }

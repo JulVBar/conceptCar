@@ -55,14 +55,6 @@ module.exports = {
                 removeComments: isProd 
             }
         }),
-        new HTMLWebpackPlugin({    // Подключаем каждую страницу отдельно, обязательно указываем filename
-            filename: 'blog-post.html',
-            template: './blog-post.html', 
-            minify: {
-                collapseWhitespace: isProd, 
-                removeComments: isProd 
-            }
-        }),
         new CleanWebpackPlugin(),
         new CopyWebpackPlugin({
             patterns: [

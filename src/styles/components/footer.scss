@@ -6,7 +6,7 @@
     width: 100%;
     padding: $ud-padding $rl-padding;
     background: transparent;
-    @include animation-fade-in (1s, 3.8s);
+    @include animation-fade-in (1s, $general-delay);
 
     &-copyright {
         text-align: left;
