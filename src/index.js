@@ -8,7 +8,7 @@ import preloader from './js/preloader';
 window.addEventListener('DOMContentLoaded', function() {
     verticalSlider();
     burgerMenu();
-    // preloader();
+    preloader();
 });
 
 // load all images
