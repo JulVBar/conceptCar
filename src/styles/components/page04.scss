@@ -1,0 +1,173 @@
+.page04-feature {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+
+    &-dot {
+        width: 130px;
+        height: 130px;
+        position: absolute;
+        top: -40px;
+        left: -40px;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        background: transparent;
+        cursor: pointer;
+        transition: all .2s linear;
+        &:hover::after {
+            box-shadow: 0px 0px 10px 10px rgb(217 151 246 / 20%), inset 0px 0px 20px 35px rgb(217 151 246 / 10%), 
+                        0 0 5px $secondary, 0 0 10px $secondary, 0 0 15px $secondary, 0 0 20px $secondary;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #a4d7da, $secondary);
+            box-shadow: 0px 0px 10px 10px rgb(217 151 246 / 20%), inset 0px 0px 20px 35px rgb(217 151 246 / 10%);
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #dcd9f5a8;
+            background: transparent;
+        }
+    }
+
+    &-line {
+        position: absolute;
+        right: -65%;
+        width: 1020px;
+        height: 270px;
+        svg {
+            fill: none;
+            stroke: #dcd9f5a8;
+            stroke-width: 2;
+            position: absolute;
+            right: 0;
+        }
+        &--wheel {
+            bottom: 45%;
+            svg path {
+                stroke-dasharray: 1100;
+                stroke-dashoffset: 1100;
+            }
+        }
+        &--salon {
+            top: 50%;
+            svg path {
+                stroke-dasharray: 1100;
+                stroke-dashoffset: 1100;
+            }
+        }
+        &--control {
+            bottom: 40%;
+            right: -70%;
+            svg {
+                bottom: 0;
+            }
+            svg path {
+                stroke-dasharray: 870;
+                stroke-dashoffset: 870;
+            }
+        }
+    }
+    &-line-above {
+        opacity: 0;
+        width: 28rem;
+        position: absolute;
+        
+        &--wheel {
+            top: -40%;
+            left: 20%;
+        }
+        &--control {
+            top: 40%;
+            left: 30%;
+        }
+        &--salon {
+            top: -15%;
+            left: 0;
+        }
+    }
+    &-line-under {
+        opacity: 0;
+        position: absolute;
+        
+        &--wheel {
+            top: 10%;
+            left: 20%;
+        }
+        &--control {
+            top: 90%;
+            left: 30%;
+        }
+        &--salon {
+            left: 0;
+            top: 40%;
+        }
+
+        p {
+            width: 30rem;
+            color: #dcd9f5a8;
+            letter-spacing: 1.2px;
+            line-height: 1.5rem;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+    }
+    &-title {
+        font-weight: 400;
+        font-size: 2.5rem;
+        font-family: $secondary-font;
+    }
+    &-image {
+        width: 19rem;
+        height: 10rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.animate-line {
+    svg path {
+        animation: line 1s linear forwards;
+    }
+}
+.animate-line-content {
+    @include animation-fade-in(1.5s, 1s);
+}
+
+@keyframes line {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+#wheel {
+    top: 78%;
+    right: 51%;
+}
+#salon {
+    top: 40%;
+    right: 40%;
+}
+#control {
+    top: 55%;
+    right: 57%;
+}

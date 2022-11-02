@@ -1,9 +1,10 @@
 .footer {
     position: fixed;
     bottom: 0;
+    right: 1rem;
     text-align: center;
     z-index: 3;
-    padding: $ud-padding $rl-padding;
+    padding: 1rem 0;
     background: transparent;
     @include animation-fade-in (1s, $general-delay);
 

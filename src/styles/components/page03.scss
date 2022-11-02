@@ -73,9 +73,9 @@
         visibility: hidden;
         transition: all 1s ease;
         &:hover {
-            .page03-circle-path {
-                animation-play-state: running;
-            }
+            // .page03-circle-path {
+            //     animation-play-state: running;
+            // }
             .page03-arrow {
                 left: 115%;
             }
@@ -107,8 +107,8 @@
         z-index: 9;
     }
     &-circle-path {
-        animation: rotate 5000ms infinite linear;
-        animation-play-state: paused;
+        animation: rotate 10000ms infinite linear;
+        // animation-play-state: paused;
         &:after {
             content: "";
             position: absolute;
