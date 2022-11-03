@@ -6,9 +6,6 @@ function featureTabs() {
     const under = document.querySelectorAll('.page04-feature-line-under');
     
     slide4.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
         if (e.target?.classList.contains('page04-feature-dot')) {
             features.forEach(el => el.classList.remove('animate-line'));
             (e.target?.nextElementSibling).classList.add('animate-line');

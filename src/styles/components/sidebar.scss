@@ -6,7 +6,6 @@
     height: 70%;
     padding: 0 4.5rem;
     @include animation-fade-in (1s, $general-delay);
-
     &-border {
         position: absolute;
         display: block;
@@ -16,7 +15,6 @@
         height: 100%;
         background: linear-gradient(180deg, rgba(217,151,246,1) 0%, rgba(255,255,255,0) 100%);
     }
-
     &-container {
         width: 100%;
         height: 100%;

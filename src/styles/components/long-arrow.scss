@@ -8,14 +8,12 @@
         height: 11rem;
         width: 10rem;
         @include animation-fade-in (1s, $general-delay);
-
         &:hover {
             .scroll-text {
                 color: $primary;
             }
-        } 
+        }
     }
-
     &-arrow {
         position: absolute;
         display: block;

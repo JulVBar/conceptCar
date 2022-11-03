@@ -1,14 +1,14 @@
 .page01 {
     margin-top: -10%;
     &-title {
-        font-size: 120px;
+        @include adaptiv-font(5.5, 1.5);
         font-family: $secondary-font;
         letter-spacing: 12px;
         margin-bottom: 20px;
         text-shadow: 0 0 6px $text;
         display: flex;
         justify-content: center;
-
+        
         span {
             display: block;
             &:nth-child(1) {
@@ -28,7 +28,7 @@
             }
             &:nth-child(6) {
                 @include animation-scale-out(1.75s);
-                margin-right: 4rem;
+                margin-right: 10%;
             }
             &:nth-child(7) {
                 @include animation-scale-out(2s);
@@ -50,12 +50,12 @@
     }
     &-sub-title {
         font-weight: 400 !important;
-        margin-bottom: 15px;
         font-family: $secondary-font;
         margin-bottom: 20px;
         opacity: 0;
         filter: blur(4px);
         @include animation-blur-out (1s, $general-delay);
+        
     }
     &-link {
         font-weight: 600;

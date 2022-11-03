@@ -1,0 +1,67 @@
+.page02 {
+    display: flex;
+    max-width: 80%;
+    margin: 0 auto;
+    &-title {
+        width: 60%;
+        text-align: left;
+        h1 {
+            @include adaptiv-font(3.5, 1.5);
+            font-family: $secondary-font;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            span {
+                font-style: italic;
+                text-transform: uppercase;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    width: 4rem;
+                    height: 0.3rem;
+                    background: white;
+                    top: 45%;
+                    right: -40%;
+                }
+            }
+        }
+        h2 {
+            font-weight: 400;
+            font-family: $secondary-font;
+            @include adaptiv-font(2, 1);
+        }
+    }
+    &-content {
+        width: 25%;
+        background: #1e1738d5;
+        padding: 2rem;
+        border-radius: 2rem;
+        animation: transform 50s ease-in-out infinite both alternate;
+        box-shadow:
+                0 0 .2rem white,
+                inset 0 0 .2rem white,
+                0 0 1rem $primary,
+                inset 0 0 1rem $primary,
+                0 0 2rem $primary,
+                inset 0 0 2rem $primary;
+        p {
+            text-align: left;
+            color: #dcd9f5bf;
+            letter-spacing: 1.2px;
+            line-height: 1.8rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@keyframes transform {
+    0%,
+  100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+   14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+   28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+   42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+   56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+   70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+   84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}

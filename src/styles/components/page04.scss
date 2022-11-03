@@ -149,7 +149,7 @@
     }
 }
 .animate-line-content {
-    @include animation-fade-in(1.5s, 1s);
+    @include animation-fade-in(1.5s, 0s);
 }
 
 @keyframes line {

@@ -1,0 +1,125 @@
+.page05 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    &-button {
+        text-align: center;
+        margin-bottom: 8rem;
+    }
+    &-title {
+        position: absolute;
+        bottom: 30%;
+        left: 10%;
+        width: 30%;
+        font-size: 3rem;
+        font-family: $secondary-font;
+        letter-spacing: 4px;
+        opacity: 0;
+    }
+    &-content {
+        position: absolute;
+        bottom: 20%;
+        left: 20%;
+        width: 30%;
+        text-align: left;
+        color: #dcd9f5bf;
+        letter-spacing: 1.2px;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+    }
+    &-play-btn {
+        width: 150px;
+        height: 150px;
+        transform: rotate(90deg);
+        cursor: pointer;
+        &-anchor {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+        }
+        &-mover {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            animation: rotate 10000ms infinite linear;
+            &:after {
+                content: "";
+                position: absolute;
+                top: 1.2rem;
+                left: 1.2rem;
+                z-index: 10;
+                width: 0.5rem;
+                height: 0.5rem;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #a4d7da, $secondary);
+                box-shadow: 0 0 5px $secondary, 0 0 10px $secondary, 0 0 15px $secondary, 0 0 20px $secondary;
+            }
+            
+        }
+        &:hover {
+            .page05-triangle {
+                transform: translate(-45%, -50%) rotate(-90deg) scale(1.3);
+            }
+        }
+    }
+    &-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        circle {
+            stroke-dasharray: 480px;
+            stroke-dashoffset: 480px;
+        }
+    }
+    &-triangle {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-45%, -50%) rotate(-90deg);
+        transition: all .3s ease;
+        opacity: 0;
+    }
+    &-top-text {
+        margin-bottom: 1rem;
+        letter-spacing: 1.2px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $secondary;
+        opacity: 0;
+    }
+    &-bottom-text {
+        margin-top: 1rem;
+        letter-spacing: 1.2px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        opacity: 0;
+    }
+}
+
+@keyframes draw-circle {
+    to {
+    stroke-dashoffset: 0px;
+    }
+}
+
+.draw-circle {
+    .page05-circle {
+        circle {
+            animation: draw-circle 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+    }
+    
+}
+.fade-in-after-circle {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1.6s;
+}

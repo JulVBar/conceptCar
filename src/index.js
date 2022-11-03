@@ -10,7 +10,7 @@ import featureTabs from './js/featureTabs';
 window.addEventListener('DOMContentLoaded', function() {
     verticalSlider();
     burgerMenu();
-    // preloader();
+    preloader();
     page03Roll();
     featureTabs();
 });

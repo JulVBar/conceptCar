@@ -24,10 +24,24 @@ function verticalSlider() {
 
         if (swiper.activeIndex === 3) {
             document.querySelectorAll('.page04-feature-line').forEach(el => el.classList.remove('animate-line'))
+            document.querySelectorAll('.page04-feature-line-above').forEach(el => el.classList.remove('animate-line-content'))
+            document.querySelectorAll('.page04-feature-line-under').forEach(el => el.classList.remove('animate-line-content'))
+
             document.querySelector('.page04-feature-line--wheel').classList.add('animate-line');
             document.querySelector('.page04-feature-line--wheel')?.firstElementChild.classList.add('animate-line-content');
             document.querySelector('.page04-feature-line--wheel')?.lastElementChild.classList.add('animate-line-content');
         }
+
+        if (swiper.activeIndex === 4) {
+            document.querySelector('.page05-play-btn').classList.add('draw-circle');
+            document.querySelector('.page05-triangle').classList.add('fade-in-after-circle');
+            document.querySelector('.page05-top-text').classList.add('fade-in-after-circle');
+            document.querySelector('.page05-bottom-text').classList.add('fade-in-after-circle');
+            document.querySelector('.page05-play-btn-anchor').classList.add('fade-in-after-circle');
+            document.querySelector('.page05-title').classList.add('fade-in-after-circle');
+            document.querySelector('.page05-content').classList.add('fade-in-after-circle');
+        }
+
     });
     
     // swiper.slideTo(index, speed, runCallbacks)

@@ -1,4 +1,7 @@
 $index: calc(1vw - 1vh);
+$maxWidth: 80; //1280px 80rem
+$minWidth: 24; //390px 24rem
+
 
 $white:rgb(255, 255, 255);
 $black:rgb(0, 0, 0);
@@ -26,9 +29,8 @@ $ud-padding: 20px;
 //media
 $middle-desk: 1440px;
 $mini-desk: 1200px;
-    $desktop: 1025px;
 $tablet: 1024px;
-$mini-tablet: 768px;
+$mini-tablet: 769px;
 $mobile: 576px;
 $mini-mobile: 376px;
 
